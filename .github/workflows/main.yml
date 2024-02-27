@@ -35,7 +35,7 @@ jobs:
             jmeter-${{ runner.os }}-
 
       - name: Run JMeter Load Tests
-        if: steps.cache.outputs.cache-hit != 'true' 
+        if: steps.cache-jmeter.outputs.cache-hit != 'true' 
         run: |
           sudo apt-get update && sudo apt-get install -y openjdk-11-jre
           wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.4.1.tgz -O apache-jmeter.tgz
@@ -43,6 +43,7 @@ jobs:
           tar -xf apache-jmeter.tgz -C jmeter
 
       - name: upload jmeter artifacts
+        if: steps.cache-jmeter.outputs.cache-hit != 'true'
         uses: actions/upload-artifact@v2
         with:
           name: jmeter-artifact
@@ -58,7 +59,7 @@ jobs:
         run: |
           ls jmeter
           cd jmeter
-          .apache-jmeter-5.4.1/bin/jmeter -n -t Jmeter-file.jmx -l Jmeter-file.jtl
+          ./apache-jmeter-5.4.1/bin/jmeter -n -t Jmeter-file.jmx -l Jmeter-file.jtl
         shell: bash
           
         #   export PATH=$PATH:/opt/apache-jmeter-5.4.1/bin
