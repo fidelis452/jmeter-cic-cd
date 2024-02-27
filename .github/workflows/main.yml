@@ -47,19 +47,12 @@ jobs:
         with:
           name: jmeter-artifact
           path: jmeter
-
-  run-jmeter:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
-      - name: Download JMeter Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: jmeter-artifact
-          path: jmeter
+          
+      # - name: Download JMeter Artifact
+      #   uses: actions/download-artifact@v2
+      #   with:
+      #     name: jmeter-artifact
+      #     path: jmeter
 
       - name: Run JMeter Test
         run: |
