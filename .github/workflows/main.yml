@@ -48,12 +48,6 @@ jobs:
         with:
           name: jmeter-artifact
           path: jmeter/**
-          
-      # - name: Download JMeter Artifact
-      #   uses: actions/download-artifact@v2
-      #   with:
-      #     name: jmeter-artifact
-      #     path: jmeter
 
       - name: Run JMeter Test
         run: |
@@ -70,13 +64,4 @@ jobs:
             echo "JMeter test failed!"
             exit 1
           fi
-          
-        #   export PATH=$PATH:/opt/apache-jmeter-5.4.1/bin
-        #   jmeter -n -t /path/to/your/Jmeter-file.jmx -l /path/to/your/report.jtl
-        # working-directory: ${{ github.workspace }}
-
-  # Uncomment and add additional jobs as needed
-  # additional-job:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: ...
+         
