@@ -20,12 +20,16 @@ pipelines:
       - step:
           name: Build for prod env
           script:
+            - echo "PATH=$PATH:$(npm bin -g)" >> $BITBUCKET_ENV_FILE
+            - source $BITBUCKET_ENV_FILE
             - ng build --prod
           artifacts:
             - dist/** # Save build for next steps
       - step:
           name: Build for dev env
           script:
+            - echo "PATH=$PATH:$(npm bin -g)" >> $BITBUCKET_ENV_FILE
+            - source $BITBUCKET_ENV_FILE
             - ng build --watch --configuration development
           artifacts:
             - dev/** # Save build for next steps
