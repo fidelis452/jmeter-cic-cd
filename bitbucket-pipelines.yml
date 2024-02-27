@@ -20,7 +20,7 @@ pipelines:
       - step:
           name: Build for prod env
           script:
-            - ng build:production
+            - ng build --prod
           artifacts:
             - dist/** # Save build for next steps
       - step:
