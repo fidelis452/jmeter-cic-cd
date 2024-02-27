@@ -1,0 +1,40 @@
+name: CI/CD with JMeter
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: |
+          npm install -g @angular/cli
+          npm install
+        working-directory: ${{ github.workspace }}
+
+      - name: Run JMeter Load Tests
+        run: |
+          sudo apt-get update && sudo apt-get install -y openjdk-11-jre
+          wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.4.1.tgz -O /jmeter/apache-jmeter.tgz
+          tar -xf /jmeter/apache-jmeter.tgz -C /opt
+          export PATH=$PATH:/opt/apache-jmeter-5.4.1/bin
+          jmeter -n -t /path/to/your/Jmeter-file.jmx -l /path/to/your/report.jtl
+        working-directory: ${{ github.workspace }}
+
+  # Uncomment and add additional jobs as needed
+  # additional-job:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: ...
