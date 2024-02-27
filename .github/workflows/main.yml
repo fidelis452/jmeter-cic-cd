@@ -22,8 +22,7 @@ jobs:
         run: |
           npm install -g @angular/cli
           npm install
-        working-directory: ${{ github.workspace }}
-
+          
       - name: Cache Apache JMeter
         uses: actions/cache@v2
         id: cache-jmeter
@@ -34,7 +33,7 @@ jobs:
           restore-keys: |
             jmeter-${{ runner.os }}-
 
-      - name: Run JMeter Load Tests
+      - name: Set up JDK and Apache JMeter
         if: steps.cache-jmeter.outputs.cache-hit != 'true' 
         run: |
           sudo apt-get update && sudo apt-get install -y openjdk-11-jre
@@ -49,7 +48,7 @@ jobs:
           name: jmeter-artifact
           path: jmeter/**
 
-      - name: Run JMeter Test
+      - name: Run our JMeter Load test
         run: |
           ls jmeter
           cd jmeter
@@ -63,5 +62,4 @@ jobs:
           else
             echo "JMeter test failed!"
             exit 1
-          fi
-         
+          fi      
