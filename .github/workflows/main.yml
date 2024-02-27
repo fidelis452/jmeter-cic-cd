@@ -58,7 +58,7 @@ jobs:
         run: |
           ls jmeter
           cd jmeter
-          ./bin/jmeter -n -t jmeter/Jmeter-file.jmx -l jmeter/Jmeter-file.jtl
+          .apache-jmeter-5.4.1/bin/jmeter -n -t Jmeter-file.jmx -l Jmeter-file.jtl
         shell: bash
           
         #   export PATH=$PATH:/opt/apache-jmeter-5.4.1/bin
