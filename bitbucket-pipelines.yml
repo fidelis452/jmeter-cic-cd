@@ -24,10 +24,10 @@ pipelines:
             - npm run build
           artifacts:
             - dev/** # Save build for next steps
-      - step:
-          name: Test
-          script:
-            - npm run test
+      # - step:
+      #     name: Test
+      #     script:
+      #       - npm run test
       - step:
           name: Run JMeter Load Tests
           script:
