@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="41" it="0" lt="40" ct="5" ts="1709022005883" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="705" sby="116" ng="1" na="1">
+  <java.net.URL>http://localhost:4200/</java.net.URL>
+</httpSample>
+<httpSample t="6" it="0" lt="6" ct="1" ts="1709022008879" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 1-2" dt="text" by="705" sby="116" ng="1" na="1">
+  <java.net.URL>http://localhost:4200/</java.net.URL>
+</httpSample>
+<httpSample t="5" it="0" lt="5" ct="2" ts="1709022011878" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 1-3" dt="text" by="705" sby="116" ng="1" na="1">
+  <java.net.URL>http://localhost:4200/</java.net.URL>
+</httpSample>
+<httpSample t="5" it="0" lt="5" ct="2" ts="1709022014878" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 1-4" dt="text" by="705" sby="116" ng="1" na="1">
+  <java.net.URL>http://localhost:4200/</java.net.URL>
+</httpSample>
+<httpSample t="5" it="0" lt="5" ct="1" ts="1709022017877" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 1-5" dt="text" by="705" sby="116" ng="1" na="1">
+  <java.net.URL>http://localhost:4200/</java.net.URL>
+</httpSample>
+<httpSample t="13" it="0" lt="12" ct="4" ts="1709022020878" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 1-6" dt="text" by="705" sby="116" ng="1" na="1">
+  <java.net.URL>http://localhost:4200/</java.net.URL>
+</httpSample>
+<httpSample t="8" it="0" lt="8" ct="3" ts="1709022023879" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 1-7" dt="text" by="705" sby="116" ng="1" na="1">
+  <java.net.URL>http://localhost:4200/</java.net.URL>
+</httpSample>
+<httpSample t="5" it="0" lt="5" ct="2" ts="1709022026877" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 1-8" dt="text" by="705" sby="116" ng="1" na="1">
+  <java.net.URL>http://localhost:4200/</java.net.URL>
+</httpSample>
+<httpSample t="6" it="0" lt="6" ct="3" ts="1709022029879" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 1-9" dt="text" by="705" sby="116" ng="1" na="1">
+  <java.net.URL>http://localhost:4200/</java.net.URL>
+</httpSample>
+<httpSample t="7" it="0" lt="7" ct="4" ts="1709022032878" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 1-10" dt="text" by="705" sby="116" ng="1" na="1">
+  <java.net.URL>http://localhost:4200/</java.net.URL>
+</httpSample>
+
+</testResults>
