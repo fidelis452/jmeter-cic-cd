@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: jmeter-artifact
-          path: apache-jmeter
+          path: jmeter
           
         #   export PATH=$PATH:/opt/apache-jmeter-5.4.1/bin
         #   jmeter -n -t /path/to/your/Jmeter-file.jmx -l /path/to/your/report.jtl
