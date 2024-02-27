@@ -1,4 +1,4 @@
-image: node:10
+image: node:18
 
 pipelines:
   branches:
@@ -9,12 +9,7 @@ pipelines:
             - node
           script: # Install Angular CLI globally
             - npm install -g @angular/cli 
-      - step: # Install project dependencies using npm
-          name: Installation
-          caches:
-            - node
-          script:
-            - npm install
+            - npm install # Install project dependencies using npm
           artifacts:
             - node_modules/** # Save modules for next steps
       - step:
