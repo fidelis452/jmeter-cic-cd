@@ -28,10 +28,10 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y openjdk-11-jre
           wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.4.1.tgz -O /jmeter/apache-jmeter.tgz
-          tar -xf /jmeter/apache-jmeter.tgz -C /opt
-          export PATH=$PATH:/opt/apache-jmeter-5.4.1/bin
-          jmeter -n -t /path/to/your/Jmeter-file.jmx -l /path/to/your/report.jtl
-        working-directory: ${{ github.workspace }}
+        #   tar -xf /jmeter/apache-jmeter.tgz -C /opt
+        #   export PATH=$PATH:/opt/apache-jmeter-5.4.1/bin
+        #   jmeter -n -t /path/to/your/Jmeter-file.jmx -l /path/to/your/report.jtl
+        # working-directory: ${{ github.workspace }}
 
   # Uncomment and add additional jobs as needed
   # additional-job:
