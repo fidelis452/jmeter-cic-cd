@@ -20,16 +20,16 @@ pipelines:
       - step:
           name: Build for prod env
           script:
-            - ng build:production
+            - npm run build
           artifacts:
             - dist/** # Save build for next steps
       - step:
           name: Build for dev env
           script:
-            - ng build --watch --configuration development
+            - npm run build
           artifacts:
             - dev/** # Save build for next steps
       - step:
           name: Test
           script:
-            - ng test
+            - npm run test
