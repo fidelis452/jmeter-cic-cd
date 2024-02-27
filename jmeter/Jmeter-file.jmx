@@ -80,7 +80,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">D:\jenkins-jmeter\jmeter-test\jmeter-cli\Jmeter-file.csv</stringProp>
+          <stringProp name="filename">D:\jenkins-jmeter\jmeter-test\jmeter\Jmeter-file.csv</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
