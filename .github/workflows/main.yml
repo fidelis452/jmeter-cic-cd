@@ -61,6 +61,15 @@ jobs:
           cd jmeter
           ./apache-jmeter-5.4.1/bin/jmeter -n -t Jmeter-file.jmx -l Jmeter-file.jtl
         shell: bash
+
+      - name: Check Test Results
+        run: |
+          if [ $? -eq 0 ]; then
+            echo "JMeter test passed!"
+          else
+            echo "JMeter test failed!"
+            exit 1
+          fi
           
         #   export PATH=$PATH:/opt/apache-jmeter-5.4.1/bin
         #   jmeter -n -t /path/to/your/Jmeter-file.jmx -l /path/to/your/report.jtl
