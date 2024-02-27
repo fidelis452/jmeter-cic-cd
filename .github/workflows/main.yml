@@ -24,10 +24,21 @@ jobs:
           npm install
         working-directory: ${{ github.workspace }}
 
+      - name: Cache Apache JMeter
+        uses: actions/cache@v2
+        with:
+          path: |
+            jmeter
+          key: jmeter-${{ runner.os }}-${{hashFiles('**/apache-jmeter-5.4.1.tgz') }}
+          restore-keys: |
+            jmeter-${{ runner.os }}-
+
       - name: Run JMeter Load Tests
+        if: steps.cache.outputs.cache-hit != 'true' 
         run: |
           sudo apt-get update && sudo apt-get install -y openjdk-11-jre
           wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.4.1.tgz -O apache-jmeter.tgz
+          mkdir -p jmeter
           tar -xf apache-jmeter.tgz -C jmeter
 
       - name: upload jmeter artifacts
